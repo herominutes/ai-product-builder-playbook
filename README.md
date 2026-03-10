@@ -18,7 +18,7 @@ The goal of this repository is to provide practical guidance for product leaders
 ---
 # AI Product Operating System Methodology**
 
-Principles → Strategy → Discovery → Architecture → Execution → Evaluation
+Principles → Strategy → Discovery → Product Leadership Alignment → Architecture → Documentation → Execution → Evaluation → Analytics → Consulting / Transformation
 
 ---
 
