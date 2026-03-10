@@ -16,6 +16,21 @@ This playbook captures the operating frameworks I use when designing, building, 
 The goal of this repository is to provide practical guidance for product leaders building both **traditional digital products and AI-powered systems**.
 
 ---
+# AI Product Operating System Methodology**
+
+Principles
+↓
+Strategy
+↓
+Discovery
+↓
+Architecture
+↓
+Execution
+↓
+Evaluation
+
+---
 
 # 🧭 Product & AI Development Lifecycle
 
