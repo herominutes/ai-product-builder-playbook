@@ -1,1 +1,158 @@
+# Product Opportunity Assessment Playbook
 
+A structured framework for identifying, evaluating, and prioritizing product opportunities.
+
+This playbook helps product leaders determine **which opportunities are worth pursuing** before investing significant resources in product development.
+
+---
+
+# Purpose
+
+Product teams often move too quickly from ideas to execution.
+
+The Product Opportunity Assessment framework ensures that teams:
+
+• validate real user problems  
+• evaluate market potential  
+• assess strategic alignment  
+• understand technical feasibility  
+• prioritize opportunities with the highest potential impact  
+
+---
+
+# The Opportunity Assessment Framework
+
+Product opportunities should be evaluated across five dimensions.
+
+Each dimension should be evaluated before moving forward.
+
+---
+
+# 1. User Problem
+
+The foundation of every opportunity is a **clear, validated user problem**.
+
+Questions to ask:
+
+• Who is the user?  
+• What problem are they experiencing?  
+• How often does the problem occur?  
+• How painful is the problem?  
+• What current solutions exist?
+
+Tools:
+
+• Customer interviews  
+• User journey mapping  
+• Jobs-to-be-done analysis  
+• Problem statements  
+
+---
+
+# 2. Market Opportunity
+
+Assess the potential scale of the opportunity.
+
+Questions to evaluate:
+
+• How large is the addressable market?  
+• How fast is the market growing?  
+• What competing solutions exist?  
+• Where are existing solutions failing?
+
+Frameworks:
+
+• TAM / SAM / SOM  
+• Market landscape analysis  
+• Competitive analysis  
+
+---
+
+# 3. Strategic Fit
+
+Determine whether the opportunity aligns with the company’s strategy.
+
+Key considerations:
+
+• Does this align with our product vision?  
+• Does it leverage our strengths?  
+• Does it expand our strategic position?
+
+Example dimensions:
+
+• product portfolio alignment  
+• platform expansion  
+• ecosystem advantage  
+
+---
+
+# 4. Technical Feasibility
+
+Evaluate the ability to build and deliver the solution.
+
+Questions:
+
+• Can we build this with current capabilities?  
+• What technical risks exist?  
+• How complex is the system architecture?  
+• Are AI models reliable enough?
+
+For AI products also evaluate:
+
+• model reliability  
+• retrieval systems  
+• data availability  
+
+---
+
+# 5. Business Impact
+
+Evaluate the expected value.
+
+Key metrics:
+
+• revenue potential  
+• user growth potential  
+• retention impact  
+• strategic leverage  
+
+---
+
+# Opportunity Scoring Model
+
+Opportunities can be evaluated using a weighted scoring system.
+
+Opportunity Score = (User Pain × Market Size × Strategic Fit × Business Impact)
+÷ Technical Complexity
+
+This helps teams prioritize opportunities objectively.
+
+---
+
+# Output of the Assessment
+
+A strong opportunity assessment should produce:
+
+• a clear problem definition  
+• market opportunity analysis  
+• strategic rationale  
+• technical feasibility evaluation  
+• estimated business impact  
+
+---
+
+# Opportunity Assessment Template
+
+Opportunity Title
+
+User Problem  
+Target User  
+Current Alternatives  
+Market Opportunity  
+Strategic Fit  
+Technical Feasibility  
+Business Impact  
+
+Recommendation:
+
+Proceed / Validate Further / Do Not Pursue
