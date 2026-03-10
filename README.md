@@ -16,11 +16,7 @@ This playbook captures the operating frameworks I use when designing, building, 
 The goal of this repository is to provide practical guidance for product leaders building both **traditional digital products and AI-powered systems**.
 
 ---
-# AI Product Operating System Methodology**
-
-If you want a slightly better version with the governance note included, use this:
-
-## 🧠 AI Product Operating System
+# 🧠 AI Product Operating System Methodology
 
 ```mermaid
 flowchart TD
