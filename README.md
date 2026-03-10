@@ -18,46 +18,22 @@ The goal of this repository is to provide practical guidance for product leaders
 ---
 # AI Product Operating System Methodology**
 
-┌───────────────┐
-│  Principles   │
-└───────┬───────┘
-        ↓
-┌───────────────┐
-│   Strategy    │
-└───────┬───────┘
-        ↓
-┌───────────────┐
-│   Discovery   │
-└───────┬───────┘
-        ↓
-┌─────────────────────────┐
-│   Product Leadership    │
-│ (Governance & Portfolio)│
-└───────────┬─────────────┘
-            ↓
-┌───────────────┐
-│ AI Architecture│
-└───────┬───────┘
-        ↓
-┌───────────────┐
-│ Documentation │
-└───────┬───────┘
-        ↓
-┌───────────────┐
-│   Execution   │
-└───────┬───────┘
-        ↓
-┌───────────────┐
-│ AI Evaluation │
-└───────┬───────┘
-        ↓
-┌───────────────┐
-│   Analytics   │
-└───────┬───────┘
-        ↓
-┌─────────────────────┐
-│ Consulting & Scaling│
-└─────────────────────┘
+If you want a slightly better version with the governance note included, use this:
+
+## 🧠 AI Product Operating System
+
+```mermaid
+flowchart TD
+    A[Principles] --> B[Strategy]
+    B --> C[Discovery]
+    C --> D[Product Leadership<br/>Governance & Portfolio]
+    D --> E[AI Architecture]
+    E --> F[Documentation]
+    F --> G[Execution]
+    G --> H[AI Evaluation]
+    H --> I[Analytics]
+    I --> J[Consulting & Scaling]
+```
 
 ---
 
