@@ -148,8 +148,8 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
   <!-- LIST VIEW -->
   <div id="view-list">
     <div class="stats-row">
-      <div><div class="stat-n">43</div><div class="stat-l">Artifacts</div></div>
-      <div><div class="stat-n">10</div><div class="stat-l">Categories</div></div>
+      <div><div class="stat-n">45</div><div class="stat-l">Artifacts</div></div>
+      <div><div class="stat-n">11</div><div class="stat-l">Categories</div></div>
       <div><div class="stat-n" id="visCount">43</div><div class="stat-l">Visible</div></div>
     </div>
     <div class="search-wrap">
@@ -278,6 +278,17 @@ const phases = [
       { name: 'AI monitoring',              folder: 'ai-evaluation',     file: 'ai-monitoring',               when: 'Use to detect model degradation post-launch' },
     ]
   },
+  {
+    id: 'finance',
+    num: '08',
+    title: 'Finance & business case',
+    desc: 'Does the economics stack up?',
+    connector: null,
+    artifacts: [
+      { name: 'AI product unit economics',  folder: 'finance',           file: 'ai-product-unit-economics',   when: 'Use to model cost per inference, cost per user, and gross margin before building' },
+      { name: 'AI product business case',   folder: 'finance',           file: 'ai-product-business-case',    when: 'Use to build a CFO-ready investment case with ROI, payback period, and scenario analysis' },
+    ]
+  },
 ];
 
 /* ─────────────────────────────────────────────
@@ -294,6 +305,7 @@ const categories = [
   { id: 'principles',         name: 'Principles',         files: ['ai-builder-principles','product-principles','responsible-ai-principles'] },
   { id: 'product-leadership', name: 'Product Leadership', files: ['communication-and-handoffs','product-decision-making','product-governance','product-operating-model','product-review-framework'] },
   { id: 'strategy',           name: 'Strategy',           files: ['product-opportunity-assessment','product-strategy-framework','product-vision-narrative'] },
+  { id: 'finance',            name: 'Finance',            files: ['ai-product-unit-economics','ai-product-business-case'] },
 ];
 
 function toTitle(s) {
