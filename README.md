@@ -1,269 +1,115 @@
-# 🧠 AI Product Builder Playbook
+# AI Product Builder Playbook
 
-A collection of frameworks, methodologies, and templates for building modern digital products and AI-native systems.
+**A living operating system for building modern digital products and AI-native systems.**
 
-This playbook captures the operating frameworks I use when designing, building, and scaling products across:
-
-• Product Strategy  
-• Product Discovery  
-• Product Execution  
-• AI System Architecture  
-• AI Evaluation & Safety  
-• Product Analytics  
-• Product Leadership  
-• AI Product Consulting
-
-The goal of this repository is to provide practical guidance for product leaders building both **traditional digital products and AI-powered systems**.
+→ **[Browse the full playbook](https://herominutes.github.io/ai-product-builder-playbook/)**
 
 ---
-# 🧠 AI Product Operating System Methodology
 
-```mermaid
-flowchart TD
-    A[Principles] --> B[Strategy]
-    B --> C[Discovery]
-    C --> D[Product Leadership<br/>Governance & Portfolio]
-    D --> E[AI Architecture]
-    E --> F[Documentation]
-    F --> G[Execution]
-    G --> H[AI Evaluation]
-    H --> I[Analytics]
-    I --> J[Consulting & Scaling]
+## What this is
+
+This repository documents the complete methodology I use to design, build, and scale products — from early strategy through AI system architecture and post-launch evaluation.
+
+It is not a collection of templates pulled from the internet. Every framework here has been applied in practice: to define product vision, structure discovery, architect AI systems, and run product organizations.
+
+The playbook spans two disciplines that most teams treat separately. This one connects them:
+
+- **Traditional product management** — strategy, discovery, execution, analytics, leadership
+- **AI-native system design** — architecture, evaluation, safety, retrieval, orchestration
+
+---
+
+## How to navigate it
+
+The [interactive index](https://herominutes.github.io/ai-product-builder-playbook/) organises all 43 artifacts into a **process flow** — each phase of the product lifecycle shows which frameworks apply and when to use them.
+
+```
+Strategy → Discovery → AI Architecture → Documentation → Execution → Leadership → Learning
 ```
 
----
-
-# 🧭 Product & AI Development Lifecycle
-
-Modern product development requires combining traditional product management principles with AI system design and evaluation.
-
-This repository documents the frameworks used across each stage.
+You can also browse by category or search across all artifacts directly.
 
 ---
 
-# 📚 Playbook Structure
+## Playbook structure
 
-## 🧭 Strategy
+### 01 — Strategy & Vision
+*Where are we going and why does it matter?*
 
-Frameworks used to define product direction and align teams around outcomes.
+Frameworks for defining product direction, evaluating opportunities, and aligning leadership around outcomes before a line of work begins.
 
-Topics include:
-
-• Product Strategy Framework  
-• Product Vision & Narrative  
-• Product Opportunity Assessment  
-• Product Operating Model  
-
-Location:
+`product-vision-narrative` · `product-strategy-framework` · `product-opportunity-assessment` · `north-star-metrics` · `ai-transformation-roadmap`
 
 ---
 
-## 🔎 Discovery
+### 02 — Discovery & Research
+*What do users actually need?*
 
-Frameworks for understanding users, problems, and opportunity spaces.
+Methods for moving from assumptions to evidence — understanding the problem space before committing to solutions.
 
-Topics include:
-
-• Human-Centered Design  
-• Design Thinking  
-• Customer Journey Mapping  
-• Jobs-To-Be-Done  
-• Problem Framing  
-• User Personas  
-
-Location:
+`customer-journey-mapping` · `user-personas` · `jobs-to-be-done` · `problem-framing-framework` · `human-centered-design` · `design-thinking`
 
 ---
 
-## 🗺 Execution
+### 03 — AI Architecture & Evaluation
+*How do we build AI systems that work reliably?*
 
-Operational frameworks for building and launching products.
+System design patterns for AI-native products, alongside the evaluation frameworks needed to know when they're working and when they're not.
 
-Topics include:
-
-• Product Roadmap Framework  
-• Experimentation Framework  
-• Product Launch Playbook  
-• Product Decision Framework  
-• Prioritization Frameworks  
-
-Location:
+`ai-orchestration` · `multi-agent-system` · `rag-framework` · `ai-guardrails` · `ai-memory-system` · `llm-evaluation-framework` · `prompt-testing` · `ai-risk-framework` · `ai-monitoring`
 
 ---
 
-## 📊 Analytics
+### 04 — Planning & Documentation
+*What exactly are we building and how will we know?*
 
-Frameworks used to measure product performance and guide product learning.
+Templates that turn strategy into buildable specifications — PRDs, technical design docs, decision logs.
 
-Topics include:
-
-• North Star Metrics  
-• Product KPIs  
-• Retention Analysis  
-• Product Learning Systems  
-
-Location:
+`ai-prd-template` · `technical-design-doc` · `system-architecture-template` · `decision-log` · `product-kpis`
 
 ---
 
-# 🤖 AI Product Systems
+### 05 — Execution & Delivery
+*How do we ship with confidence?*
 
-## 🧠 AI Architecture
+Operational frameworks for prioritisation, roadmapping, experimentation, and launch — the mechanics of getting things out the door well.
 
-Frameworks for designing AI-native systems and intelligent product workflows.
-
-Topics include:
-
-• Multi-Agent Systems  
-• RAG (Retrieval Augmented Generation)  
-• AI Orchestration Patterns  
-• AI Memory Systems  
-• AI Guardrails & Safety  
-
-Location:
+`prioritization-framework` · `roadmap-framework` · `product-decision-framework` · `experimentation-framework` · `product-launch-playbook`
 
 ---
 
-## 📊 AI Evaluation
+### 06 — Leadership & Governance
+*How do we build an organisation that sustains this?*
 
-Frameworks for measuring reliability, performance, and safety of AI systems.
+Frameworks for running product teams, making decisions at scale, and embedding principles across the organisation.
 
-Topics include:
-
-• LLM Evaluation Framework  
-• Prompt Testing  
-• AI Monitoring  
-• AI Risk Framework  
-
-Location:
+`product-operating-model` · `product-governance` · `product-decision-making` · `communication-and-handoffs` · `product-review-framework` · `ai-builder-principles` · `responsible-ai-principles` · `product-principles`
 
 ---
 
-# 📄 Product Documentation
+### 07 — Learning & Iteration
+*Are we actually getting better?*
 
-Templates used when building and documenting complex product systems.
+Post-launch measurement frameworks — retention analysis, learning systems, and ongoing AI monitoring — that close the loop back into strategy.
 
-Topics include:
-
-• AI Product Requirements Document (AI-PRD)  
-• Technical Design Document  
-• System Architecture Documentation  
-• Product Decision Log  
-
-Location:
+`retention-analysis` · `product-learning-system` · `ai-monitoring`
 
 ---
 
-# 🧠 Product Leadership
+## Who this is for
 
-Frameworks used by product leaders to run teams and make strategic decisions.
+Product managers, AI product leads, founders, and product strategy consultants who want a structured, practitioner-built reference — not a textbook overview.
 
-Topics include:
-
-• Product Operating Model  
-• Product Decision Making  
-• Product Review Framework  
-
-Location:
+If you work at the intersection of product and AI, this playbook is designed for how that work actually runs.
 
 ---
 
-# 🧩 Product Principles
+## Philosophy
 
-Principles that guide how modern digital products and AI systems are designed.
+Modern products are systems, not features. The teams that build them well combine user-centred design, disciplined execution, and reliable architecture with the new demands of AI: model reliability, retrieval design, safety, and continuous evaluation.
 
-Topics include:
-
-• AI Builder Principles  
-• Product Principles  
-• Responsible AI Principles  
-
-Location:
+This playbook documents a methodology for navigating that complexity without losing sight of what products are ultimately for — solving real problems for real people.
 
 ---
 
-# 🧩 AI Product Consulting
-
-Frameworks used when advising organizations building AI-native products.
-
-Topics include:
-
-• AI Product Strategy Playbook  
-• AI Capability Maturity Model  
-• AI Transformation Roadmap  
-
-Location:
-
----
-
-# 🎯 Who This Playbook Is For
-
-This repository is designed for:
-
-• Product Managers  
-• AI Product Managers  
-• Startup Founders  
-• Product Leaders  
-• AI Builders  
-• Product Strategy Consultants  
-
----
-
-# 🚀 Philosophy
-
-Modern products are **systems**, not just features.
-
-Successful product teams combine:
-
-• user-centered design  
-• strong product strategy  
-• disciplined execution  
-• reliable system architecture  
-• continuous learning  
-
-AI products introduce new considerations such as:
-
-• model reliability  
-• retrieval architectures  
-• safety and guardrails  
-• evaluation frameworks  
-
-This playbook documents the methodologies used to navigate that complexity.
-
----
-
-# 📌 How to Use This Playbook
-
-Each document includes:
-
-• core principles  
-• framework explanations  
-• real-world application guidance  
-• templates and examples  
-
-Product leaders can use these frameworks to:
-
-• design product strategy  
-• structure product discovery  
-• build AI-native systems  
-• evaluate product performance  
-• guide product organizations
-
----
-
-# 🔭 Future Additions
-
-Planned additions include:
-
-• AI Product Lifecycle Framework  
-• AI System Architecture Playbook  
-• Product Experimentation Library  
-• AI Product Evaluation Benchmarks
-
----
-
-# 👤 Author
-
-Jamil  
-AI Product Builder | Product Strategy | AI Systems
-
+*Jamil — AI Product Builder · Product Strategy · AI Systems*
