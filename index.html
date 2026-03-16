@@ -164,7 +164,7 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
 </div>
 
 <script>
-const REPO = './';
+const REPO = 'https://github.com/herominutes/ai-product-builder-playbook/blob/main/';
 
 /* ─────────────────────────────────────────────
    PROCESS FLOW DATA
@@ -361,7 +361,8 @@ function buildFlow() {
     row.id = `phase-${phase.id}`;
 
     const nodes = phase.artifacts.map(a => {
-      const href = `${REPO}${a.folder}/${a.file}.md`;
+      const fname = a.file.endsWith('.md') ? a.file : a.file + '.md';
+      const href = `${REPO}${a.folder}/${fname}`;
       return `
         <a class="artifact-node" href="${href}">
           <div class="node-tag">${a.folder}</div>
@@ -413,14 +414,17 @@ function buildList() {
         <span class="list-section-name">${cat.name}</span>
         <span class="list-section-count">${matches.length}</span>
       </div>
-      ${matches.map(f => `
-        <a class="list-row" href="${REPO}${cat.id}/${f}.md">
+      ${matches.map(f => {
+        const fname = f.endsWith('.md') ? f : f + '.md';
+        return `
+        <a class="list-row" href="${REPO}${cat.id}/${fname}">
           <span class="list-name">${toTitle(f)}</span>
           <span class="list-right">
-            <span class="list-path">${cat.id}/${f}.md</span>
+            <span class="list-path">${cat.id}/${fname}</span>
             <span class="list-arrow">↗</span>
           </span>
-        </a>`).join('')}
+        </a>`;
+      }).join('')}
     `;
     content.appendChild(sec);
   });
