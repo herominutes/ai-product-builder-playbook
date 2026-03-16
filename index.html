@@ -25,7 +25,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:400;font-size:14px;line-height:1.65;min-height:100vh;-webkit-font-smoothing:antialiased}
 
 /* ── Layout ── */
-.shell{display:grid;grid-template-columns:200px 1fr;grid-template-rows:auto 1fr;min-height:100vh}
+.shell{display:grid;grid-template-columns:190px 1fr;grid-template-rows:auto 1fr;min-height:100vh}
 
 /* ── Header ── */
 .header{grid-column:1/-1;padding:44px 52px 32px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
@@ -42,11 +42,12 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 /* ── Sidebar ── */
 .sidebar{grid-column:1;grid-row:2;border-right:1px solid var(--line);padding:36px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
 .sidebar::-webkit-scrollbar{width:0}
-.nav-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:0 28px;margin-bottom:14px}
-.nav-item{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;font-size:13px;color:var(--muted);text-decoration:none;cursor:pointer;transition:color .15s;letter-spacing:0.01em;border-left:1px solid transparent}
+.nav-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:0 20px;margin-bottom:14px}
+.nav-item{display:flex;align-items:center;justify-content:space-between;padding:8px 20px;font-size:12px;color:var(--muted);text-decoration:none;cursor:pointer;transition:color .15s;letter-spacing:0.01em;border-left:1px solid transparent;white-space:nowrap;overflow:hidden}
 .nav-item:hover{color:var(--text-bright)}
 .nav-item.active{color:var(--accent);border-left-color:var(--accent)}
-.nav-count{font-size:11px;color:var(--muted)}
+.nav-item span:first-child{overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
+.nav-count{font-size:10px;color:var(--muted);flex-shrink:0;margin-left:6px}
 .nav-item.active .nav-count{color:rgba(232,255,71,0.5)}
 
 /* ── Main ── */
@@ -56,13 +57,22 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 #view-flow{display:block}
 #view-list{display:none}
 
-/* Phase row */
-.phase-row{margin-bottom:52px}
-.phase-label{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+/* Flow filter state */
+.phase-row{margin-bottom:52px;transition:opacity .2s}
+.phase-row.hidden{display:none}
+
+/* Phase header in filtered view */
+.flow-phase-header{padding-bottom:10px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.flow-phase-meta{display:flex;align-items:center;gap:12px;margin-bottom:4px}
 .phase-num{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22px;color:var(--accent);line-height:1;min-width:22px}
 .phase-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:19px;color:var(--text-bright);letter-spacing:0.01em}
-.phase-desc{font-size:12px;color:var(--muted);margin-left:auto;letter-spacing:0.04em}
-.phase-line{height:1px;background:var(--line);margin-bottom:20px}
+.phase-desc{font-size:12px;color:var(--muted);letter-spacing:0.04em}
+.phase-line{display:none}
+
+/* All phases nav button */
+.nav-all{display:flex;align-items:center;justify-content:space-between;padding:8px 20px 14px;font-size:12px;color:var(--muted);cursor:pointer;transition:color .15s;letter-spacing:0.01em;border-left:1px solid transparent;border-bottom:1px solid var(--line);margin-bottom:8px}
+.nav-all:hover{color:var(--text-bright)}
+.nav-all.active{color:var(--accent);border-left-color:var(--accent)}
 
 /* Artifact nodes */
 .node-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
@@ -175,6 +185,7 @@ const phases = [
   {
     id: 'strategy',
     num: '01',
+    nav: 'Strategy',
     title: 'Strategy & vision',
     desc: 'Where are we going?',
     connector: 'Define the opportunity → set direction',
@@ -189,6 +200,7 @@ const phases = [
   {
     id: 'discovery',
     num: '02',
+    nav: 'Discovery',
     title: 'Discovery & research',
     desc: 'What do users really need?',
     connector: 'Understand the problem → frame the solution space',
@@ -204,6 +216,7 @@ const phases = [
   {
     id: 'architecture',
     num: '03',
+    nav: 'AI Architecture',
     title: 'AI architecture & evaluation',
     desc: 'How do we build it right?',
     connector: 'Design the system → validate it works',
@@ -224,6 +237,7 @@ const phases = [
   {
     id: 'documentation',
     num: '04',
+    nav: 'Planning',
     title: 'Planning & documentation',
     desc: 'What exactly are we building?',
     connector: 'Specify the work → structure decisions',
@@ -238,6 +252,7 @@ const phases = [
   {
     id: 'execution',
     num: '05',
+    nav: 'Execution',
     title: 'Execution & delivery',
     desc: 'How do we ship with confidence?',
     connector: 'Prioritise → build → launch',
@@ -252,6 +267,7 @@ const phases = [
   {
     id: 'leadership',
     num: '06',
+    nav: 'Leadership',
     title: 'Leadership & governance',
     desc: 'How do we operate at scale?',
     connector: 'Align the org → sustain momentum',
@@ -269,9 +285,10 @@ const phases = [
   {
     id: 'analytics',
     num: '07',
+    nav: 'Analytics',
     title: 'Learning & iteration',
     desc: 'Are we getting better?',
-    connector: null,
+    connector: 'Measure outcomes → feed back into strategy',
     artifacts: [
       { name: 'Retention analysis',         folder: 'analytics',         file: 'retention-analysis',          when: 'Use to diagnose why users churn and when' },
       { name: 'Product learning system',    folder: 'analytics',         file: 'product-learning-system',     when: 'Use to institutionalise how insights flow back to the roadmap' },
@@ -281,8 +298,9 @@ const phases = [
   {
     id: 'finance',
     num: '08',
+    nav: 'Finance',
     title: 'Finance & business case',
-    desc: 'Does the economics stack up?',
+    desc: 'Do the economics stack up?',
     connector: null,
     artifacts: [
       { name: 'AI product unit economics',  folder: 'finance',           file: 'ai-product-unit-economics',   when: 'Use to model cost per inference, cost per user, and gross margin before building' },
@@ -312,8 +330,12 @@ function toTitle(s) {
   return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
-/* ── View switching ── */
+/* ── State ── */
 let currentView = 'flow';
+let activePhase = 'all';
+let listQuery = '';
+
+/* ── View switching ── */
 function setView(v, btn) {
   currentView = v;
   document.getElementById('view-flow').style.display = v === 'flow' ? 'block' : 'none';
@@ -323,90 +345,85 @@ function setView(v, btn) {
   buildSidebar(v);
 }
 
-/* ── Sidebar ── */
-let scrollListener = null;
+/* ── Filter flow phases ── */
+function filterFlow(id) {
+  activePhase = id;
 
-function setActiveNav(id) {
-  document.querySelectorAll('.nav-item').forEach(n =>
-    n.classList.toggle('active', n.dataset.id === id)
-  );
+  // Update nav active state
+  document.querySelectorAll('.nav-item, .nav-all').forEach(n => {
+    n.classList.toggle('active', n.dataset.id === id);
+  });
+
+  // Show/hide phase rows
+  document.querySelectorAll('.phase-row').forEach(row => {
+    if (id === 'all' || row.dataset.phase === id) {
+      row.classList.remove('hidden');
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+
+  // Show/hide connectors — only show when all phases visible
+  document.querySelectorAll('.phase-connector').forEach(c => {
+    c.style.display = id === 'all' ? 'flex' : 'none';
+  });
+
+  // Scroll main back to top on filter change
+  document.querySelector('.main').scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function getOffsetTop(el, container) {
-  let top = 0;
-  let cur = el;
-  while (cur && cur !== container) {
-    top += cur.offsetTop;
-    cur = cur.offsetParent;
-  }
-  return top;
-}
-
+/* ── Build Sidebar ── */
 function buildSidebar(v) {
   const nav = document.getElementById('navList');
   const labelEl = document.getElementById('sb-label');
-  const mainEl = document.querySelector('.main');
   nav.innerHTML = '';
 
-  if (scrollListener) {
-    mainEl.removeEventListener('scroll', scrollListener);
-    scrollListener = null;
-  }
+  if (v === 'flow') {
+    labelEl.textContent = 'Phases';
 
-  const items = v === 'flow' ? phases : categories;
-  const prefix = v === 'flow' ? 'phase-' : 'cat-';
+    // All phases button
+    const all = document.createElement('div');
+    all.className = 'nav-all active';
+    all.dataset.id = 'all';
+    all.innerHTML = `<span>All phases</span><span class="nav-count">${phases.reduce((s,p) => s + p.artifacts.length, 0)}</span>`;
+    all.addEventListener('click', () => filterFlow('all'));
+    nav.appendChild(all);
 
-  labelEl.textContent = v === 'flow' ? 'Phases' : 'Categories';
-
-  items.forEach(item => {
-    const a = document.createElement('a');
-    a.className = 'nav-item';
-    a.href = `#${prefix}${item.id}`;
-    a.dataset.id = item.id;
-    const count = v === 'flow' ? item.artifacts.length : item.files.length;
-    const labelText = v === 'flow'
-      ? `${item.num} ${item.title.split(' ').slice(0,2).join(' ')}`
-      : item.name;
-    a.innerHTML = `<span>${labelText}</span><span class="nav-count">${count}</span>`;
-
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.getElementById(`${prefix}${item.id}`);
-      if (!target) return;
-      // Immediately highlight
-      setActiveNav(item.id);
-      // Scroll .main to the target's position within it
-      const targetTop = getOffsetTop(target, mainEl);
-      mainEl.scrollTo({ top: targetTop - 24, behavior: 'smooth' });
+    // Individual phase buttons
+    phases.forEach(phase => {
+      const a = document.createElement('div');
+      a.className = 'nav-item';
+      a.dataset.id = phase.id;
+      a.innerHTML = `<span>${phase.num} ${phase.nav}</span><span class="nav-count">${phase.artifacts.length}</span>`;
+      a.addEventListener('click', () => filterFlow(phase.id));
+      nav.appendChild(a);
     });
 
-    nav.appendChild(a);
-  });
-
-  // Activate first by default
-  const first = nav.querySelector('.nav-item');
-  if (first) first.classList.add('active');
-
-  // Scroll spy: based on .main scrollTop, find which section is at the top
-  setTimeout(() => {
-    scrollListener = () => {
-      const scrollTop = mainEl.scrollTop;
-      let activeId = items[0].id;
-
-      items.forEach(item => {
-        const el = document.getElementById(`${prefix}${item.id}`);
-        if (!el) return;
-        const elTop = getOffsetTop(el, mainEl);
-        if (scrollTop >= elTop - 60) {
-          activeId = item.id;
+  } else {
+    labelEl.textContent = 'Categories';
+    categories.forEach(cat => {
+      const a = document.createElement('div');
+      a.className = 'nav-item';
+      a.dataset.id = cat.id;
+      a.innerHTML = `<span>${cat.name}</span><span class="nav-count">${cat.files.length}</span>`;
+      a.addEventListener('click', () => {
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        a.classList.add('active');
+        const target = document.getElementById(`cat-${cat.id}`);
+        if (target) {
+          const mainEl = document.querySelector('.main');
+          let top = 0, cur = target;
+          while (cur && cur !== mainEl) { top += cur.offsetTop; cur = cur.offsetParent; }
+          mainEl.scrollTo({ top: top - 24, behavior: 'smooth' });
         }
       });
+      nav.appendChild(a);
+    });
 
-      setActiveNav(activeId);
-    };
-
-    mainEl.addEventListener('scroll', scrollListener, { passive: true });
-  }, 200);
+    // Activate first
+    const first = nav.querySelector('.nav-item');
+    if (first) first.classList.add('active');
+  }
 }
 
 /* ── Build Flow view ── */
@@ -417,12 +434,13 @@ function buildFlow() {
     const row = document.createElement('div');
     row.className = 'phase-row';
     row.id = `phase-${phase.id}`;
+    row.dataset.phase = phase.id;
 
     const nodes = phase.artifacts.map(a => {
       const fname = a.file.endsWith('.md') ? a.file : a.file + '.md';
       const href = `${REPO}${a.folder}/${fname}`;
       return `
-        <a class="artifact-node" href="${href}">
+        <a class="artifact-node" href="${href}" target="_blank" rel="noopener">
           <div class="node-tag">${a.folder}</div>
           <div class="node-name">${a.name}</div>
           <div class="node-when">${a.when}</div>
@@ -431,12 +449,13 @@ function buildFlow() {
     }).join('');
 
     row.innerHTML = `
-      <div class="phase-label">
-        <span class="phase-num">${phase.num}</span>
-        <span class="phase-title">${phase.title}</span>
-        <span class="phase-desc">${phase.desc}</span>
+      <div class="flow-phase-header">
+        <div class="flow-phase-meta">
+          <span class="phase-num">${phase.num}</span>
+          <span class="phase-title">${phase.title}</span>
+        </div>
+        <div class="phase-desc">${phase.desc}</div>
       </div>
-      <div class="phase-line"></div>
       <div class="node-grid">${nodes}</div>
     `;
 
@@ -445,14 +464,13 @@ function buildFlow() {
     if (phase.connector) {
       const conn = document.createElement('div');
       conn.className = 'phase-connector';
-      conn.innerHTML = `<div class="phase-connector-line"></div><span class="phase-connector-text">↓ ${phase.connector}</span><div class="phase-connector-line" style="background:linear-gradient(270deg,rgba(232,255,71,0.25),transparent)"></div>`;
+      conn.innerHTML = `<div class="phase-connector-line"></div><span class="phase-connector-text">↓ ${phase.connector}</span><div class="phase-connector-line" style="background:linear-gradient(270deg,rgba(232,255,71,0.2),transparent)"></div>`;
       fc.appendChild(conn);
     }
   });
 }
 
 /* ── Build List view ── */
-let listQuery = '';
 function buildList() {
   const content = document.getElementById('list-content');
   const empty = document.getElementById('empty');
@@ -475,7 +493,7 @@ function buildList() {
       ${matches.map(f => {
         const fname = f.endsWith('.md') ? f : f + '.md';
         return `
-        <a class="list-row" href="${REPO}${cat.id}/${fname}">
+        <a class="list-row" href="${REPO}${cat.id}/${fname}" target="_blank" rel="noopener">
           <span class="list-name">${toTitle(f)}</span>
           <span class="list-right">
             <span class="list-path">${cat.id}/${fname}</span>
@@ -493,7 +511,6 @@ function buildList() {
 document.getElementById('searchInput').addEventListener('input', function() {
   listQuery = this.value.trim().toLowerCase();
   buildList();
-  buildSidebar('list');
 });
 
 /* ── Init ── */
