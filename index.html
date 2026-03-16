@@ -50,7 +50,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .nav-item.active .nav-count{color:rgba(232,255,71,0.5)}
 
 /* ── Main ── */
-.main{grid-column:2;grid-row:2;padding:44px 52px}
+.main{grid-column:2;grid-row:2;padding:44px 52px;overflow-y:auto;height:calc(100vh - 113px)}
 
 /* ── VIEW: FLOW ── */
 #view-flow{display:block}
@@ -110,7 +110,7 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
   .shell{grid-template-columns:1fr}
   .header{padding:32px 24px 24px;flex-direction:column;align-items:flex-start}
   .sidebar{display:none}
-  .main{padding:32px 24px;grid-column:1}
+  .main{padding:32px 24px;grid-column:1;height:auto;overflow-y:visible}
   .node-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){.node-grid{grid-template-columns:1fr}}
@@ -312,43 +312,86 @@ function setView(v, btn) {
 }
 
 /* ── Sidebar ── */
+let scrollListener = null;
+
+function setActiveNav(id) {
+  document.querySelectorAll('.nav-item').forEach(n =>
+    n.classList.toggle('active', n.dataset.id === id)
+  );
+}
+
 function buildSidebar(v) {
   const nav = document.getElementById('navList');
   const label = document.getElementById('sb-label');
+  const mainEl = document.querySelector('.main');
   nav.innerHTML = '';
+
+  // Remove any previous scroll listener
+  if (scrollListener) {
+    mainEl.removeEventListener('scroll', scrollListener);
+    scrollListener = null;
+  }
+
+  const items = v === 'flow' ? phases : categories;
+  const prefix = v === 'flow' ? 'phase-' : 'cat-';
+  const getId = item => v === 'flow' ? item.id : item.id;
+
   if (v === 'flow') {
     label.textContent = 'Phases';
-    phases.forEach(p => {
-      const a = document.createElement('a');
-      a.className = 'nav-item';
-      a.href = `#phase-${p.id}`;
-      a.dataset.id = p.id;
-      a.innerHTML = `<span>${p.num} ${p.title.split(' ')[0]}</span><span class="nav-count">${p.artifacts.length}</span>`;
-      nav.appendChild(a);
-    });
   } else {
     label.textContent = 'Categories';
-    categories.forEach(cat => {
-      const a = document.createElement('a');
-      a.className = 'nav-item';
-      a.href = `#cat-${cat.id}`;
-      a.dataset.id = cat.id;
-      a.innerHTML = `<span>${cat.name}</span><span class="nav-count">${cat.files.length}</span>`;
-      nav.appendChild(a);
-    });
   }
-  // scroll spy
+
+  items.forEach(item => {
+    const a = document.createElement('a');
+    a.className = 'nav-item';
+    a.href = `#${prefix}${getId(item)}`;
+    a.dataset.id = getId(item);
+    const count = v === 'flow' ? item.artifacts.length : item.files.length;
+    const label_text = v === 'flow'
+      ? `${item.num} ${item.title.split(' ').slice(0,2).join(' ')}`
+      : item.name;
+    a.innerHTML = `<span>${label_text}</span><span class="nav-count">${count}</span>`;
+
+    // On click: immediately highlight and scroll section into view
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      setActiveNav(getId(item));
+      const target = document.getElementById(`${prefix}${getId(item)}`);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    nav.appendChild(a);
+  });
+
+  // Activate first item by default
+  const first = nav.querySelector('.nav-item');
+  if (first) first.classList.add('active');
+
+  // Scroll spy: watch which section is nearest the top of .main
   setTimeout(() => {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const id = e.target.id.replace('phase-','').replace('cat-','');
-          document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.id === id));
+    scrollListener = () => {
+      const mainTop = mainEl.getBoundingClientRect().top;
+      let closest = null;
+      let closestDist = Infinity;
+
+      items.forEach(item => {
+        const el = document.getElementById(`${prefix}${getId(item)}`);
+        if (!el) return;
+        const dist = Math.abs(el.getBoundingClientRect().top - mainTop - 60);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = getId(item);
         }
       });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('[id^="phase-"],[id^="cat-"]').forEach(s => obs.observe(s));
-  }, 100);
+
+      if (closest) setActiveNav(closest);
+    };
+
+    mainEl.addEventListener('scroll', scrollListener, { passive: true });
+  }, 200);
 }
 
 /* ── Build Flow view ── */
