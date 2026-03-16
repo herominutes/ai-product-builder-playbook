@@ -320,13 +320,22 @@ function setActiveNav(id) {
   );
 }
 
+function getOffsetTop(el, container) {
+  let top = 0;
+  let cur = el;
+  while (cur && cur !== container) {
+    top += cur.offsetTop;
+    cur = cur.offsetParent;
+  }
+  return top;
+}
+
 function buildSidebar(v) {
   const nav = document.getElementById('navList');
-  const label = document.getElementById('sb-label');
+  const labelEl = document.getElementById('sb-label');
   const mainEl = document.querySelector('.main');
   nav.innerHTML = '';
 
-  // Remove any previous scroll listener
   if (scrollListener) {
     mainEl.removeEventListener('scroll', scrollListener);
     scrollListener = null;
@@ -334,60 +343,54 @@ function buildSidebar(v) {
 
   const items = v === 'flow' ? phases : categories;
   const prefix = v === 'flow' ? 'phase-' : 'cat-';
-  const getId = item => v === 'flow' ? item.id : item.id;
 
-  if (v === 'flow') {
-    label.textContent = 'Phases';
-  } else {
-    label.textContent = 'Categories';
-  }
+  labelEl.textContent = v === 'flow' ? 'Phases' : 'Categories';
 
   items.forEach(item => {
     const a = document.createElement('a');
     a.className = 'nav-item';
-    a.href = `#${prefix}${getId(item)}`;
-    a.dataset.id = getId(item);
+    a.href = `#${prefix}${item.id}`;
+    a.dataset.id = item.id;
     const count = v === 'flow' ? item.artifacts.length : item.files.length;
-    const label_text = v === 'flow'
+    const labelText = v === 'flow'
       ? `${item.num} ${item.title.split(' ').slice(0,2).join(' ')}`
       : item.name;
-    a.innerHTML = `<span>${label_text}</span><span class="nav-count">${count}</span>`;
+    a.innerHTML = `<span>${labelText}</span><span class="nav-count">${count}</span>`;
 
-    // On click: immediately highlight and scroll section into view
     a.addEventListener('click', e => {
       e.preventDefault();
-      setActiveNav(getId(item));
-      const target = document.getElementById(`${prefix}${getId(item)}`);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      const target = document.getElementById(`${prefix}${item.id}`);
+      if (!target) return;
+      // Immediately highlight
+      setActiveNav(item.id);
+      // Scroll .main to the target's position within it
+      const targetTop = getOffsetTop(target, mainEl);
+      mainEl.scrollTo({ top: targetTop - 24, behavior: 'smooth' });
     });
 
     nav.appendChild(a);
   });
 
-  // Activate first item by default
+  // Activate first by default
   const first = nav.querySelector('.nav-item');
   if (first) first.classList.add('active');
 
-  // Scroll spy: watch which section is nearest the top of .main
+  // Scroll spy: based on .main scrollTop, find which section is at the top
   setTimeout(() => {
     scrollListener = () => {
-      const mainTop = mainEl.getBoundingClientRect().top;
-      let closest = null;
-      let closestDist = Infinity;
+      const scrollTop = mainEl.scrollTop;
+      let activeId = items[0].id;
 
       items.forEach(item => {
-        const el = document.getElementById(`${prefix}${getId(item)}`);
+        const el = document.getElementById(`${prefix}${item.id}`);
         if (!el) return;
-        const dist = Math.abs(el.getBoundingClientRect().top - mainTop - 60);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closest = getId(item);
+        const elTop = getOffsetTop(el, mainEl);
+        if (scrollTop >= elTop - 60) {
+          activeId = item.id;
         }
       });
 
-      if (closest) setActiveNav(closest);
+      setActiveNav(activeId);
     };
 
     mainEl.addEventListener('scroll', scrollListener, { passive: true });
