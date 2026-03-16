@@ -17,6 +17,7 @@
 - [Strategy Evaluation](#strategy-evaluation)
 - [Templates](#templates)
 - [Anti-Patterns to Avoid](#anti-patterns-to-avoid)
+- [LLM Prompts](#-llm-prompts)
 
 ---
 
@@ -421,3 +422,154 @@ North Star: _______________  |  Target: _______________
 ---
 
 *Part of the [AI Product Builder Playbook](../README.md)*
+
+---
+
+## 🤖 LLM Prompts
+
+Use these prompts to apply this framework directly inside ChatGPT or Claude. Copy the prompt, paste it into the chat, and fill in the bracketed fields before sending.
+
+---
+
+### Prompt 1 — Build a Full Product Strategy from Scratch
+
+> **Best for:** Starting a new product, kicking off annual planning, or rebuilding strategy after a significant market or team shift.
+
+```
+You are an expert product strategist helping me build a complete, structured product strategy using the five-layer Product Strategy Stack.
+
+Work through each layer with me one at a time. After I provide input for each layer, sharpen my answers — replace vague language with specific claims, flag anything that sounds like a wish list rather than a strategy, and confirm before moving to the next layer.
+
+The five layers are:
+1. Vision — where we are going and why it matters (user, transformation, differentiator)
+2. Strategic Pillars — the 3–5 core areas of investment that will get us there
+3. Product Initiatives — the specific, time-bound bets we are placing this quarter
+4. Roadmap Alignment — how we sequence those initiatives and at what confidence level
+5. Execution — how we ensure sprint work traces back to strategy
+
+Apply these rules throughout:
+- Every pillar must have a specific metric and owner, not just a name
+- Every initiative must have a hypothesis, evidence of the problem, and a success metric
+- The strategy must include an explicit "what we are not doing" list
+- If I suggest more than 5 pillars, push back and help me consolidate
+
+My product: [describe in 2–3 sentences]
+My target user: [who they are and what they do]
+Current stage: [early / growth / scale / enterprise]
+Biggest strategic challenge right now: [describe in 1–2 sentences]
+```
+
+---
+
+### Prompt 2 — Define and Score Product Initiatives
+
+> **Best for:** Quarterly planning where you need to evaluate a backlog of potential initiatives and decide what to build next.
+
+```
+You are a product strategy advisor helping me evaluate and prioritise a set of product initiatives.
+
+For each initiative I give you, score it across five dimensions using a 1–3 scale:
+1. Strategic fit — how directly does it serve a declared strategic pillar?
+2. User impact — how meaningfully does it improve the user's outcome?
+3. Market timing — is there urgency or a window of opportunity?
+4. Confidence — how much evidence supports the hypothesis?
+5. Effort — inverse score (S=3, M=2, L=1, XL=0.5)
+
+Calculate a Priority Score: (Strategic Fit + User Impact + Market Timing + Confidence) / Effort
+
+Then rank all initiatives by score and give me:
+- Top tier: build now (score ≥ 3.0)
+- Middle tier: schedule next quarter (score 2.0–2.9)
+- Defer or drop (score < 2.0)
+
+For any initiative scoring below 2.0, tell me what would need to change to make it worth prioritising.
+
+My strategic pillars are:
+1. [Pillar 1]
+2. [Pillar 2]
+3. [Pillar 3]
+
+My initiatives to evaluate:
+1. [Initiative name — brief description]
+2. [Initiative name — brief description]
+3. [Initiative name — brief description]
+```
+
+---
+
+### Prompt 3 — Stress-Test an Existing Strategy
+
+> **Best for:** Before presenting strategy to a board, new exec, or cross-functional team — find the gaps before someone else does.
+
+```
+You are a skeptical but constructive product strategy advisor. Your job is to stress-test my product strategy and identify where it is weak, incomplete, or unconvincing.
+
+Evaluate my strategy against these six questions:
+1. Can the team use this strategy to say no to something? (If not, it is not a strategy.)
+2. Does every initiative connect to a declared pillar?
+3. Does every pillar have a specific, measurable success metric?
+4. Is there a clear "what we are not doing" list?
+5. Are the initiatives sequenced based on evidence — or based on opinions and stakeholder pressure?
+6. Would a new team member understand the strategy without needing to ask questions?
+
+For each question, give a verdict: ✅ Strong / ⚠️ Needs work / ❌ Missing
+
+Then give me the top 3 specific improvements I should make before presenting this strategy.
+
+My strategy:
+[paste your strategy document or summary here]
+```
+
+---
+
+### Prompt 4 — Run a Quarterly Strategy Review
+
+> **Best for:** End-of-quarter retrospective to assess what the strategy delivered, what it missed, and what needs to change.
+
+```
+You are a product strategy advisor helping me run a structured quarterly strategy review.
+
+I will give you our declared initiatives from last quarter, what we actually shipped, and the metrics. Your job is to:
+
+1. Assess each initiative: did we deliver it, and did it move the metric we expected?
+2. Identify the gap between what we planned and what we executed — and diagnose why
+3. Surface 2–3 strategic learnings that should update our thinking going into next quarter
+4. Recommend specific changes to our pillars or initiative prioritisation based on what we learned
+5. Flag any pillar that shows no initiative progress — this is a resource or commitment problem
+
+Format the output as a clean review document I can share with leadership.
+
+Last quarter's declared initiatives:
+1. [Initiative — target metric — result]
+2. [Initiative — target metric — result]
+3. [Initiative — target metric — result]
+
+What we actually shipped: [brief description]
+
+Current strategic pillars: [list them]
+Biggest surprise this quarter: [describe]
+```
+
+---
+
+### Prompt 5 — Generate the "What We Are Not Doing" List
+
+> **Best for:** Any time your strategy document lacks clear boundaries — the single most common gap in product strategy.
+
+```
+You are a product strategy advisor helping me define the explicit boundaries of our product strategy.
+
+A strong strategy must say no to things. Help me generate a clear, specific "What We Are Not Doing" list based on my product, my pillars, and my vision.
+
+For each exclusion you suggest, explain:
+- Why this is tempting (why a team might want to do it)
+- Why excluding it is the right strategic call given my direction
+
+Generate 6–8 specific exclusions. Make them concrete — not "we will not build features outside our core" but "we will not build a native mobile app in the next 12 months because our web product has not yet reached the retention threshold that would justify the investment."
+
+My product: [describe]
+My strategic pillars: [list them]
+My vision: [one sentence]
+Stage: [early / growth / scale]
+Biggest distraction we keep getting pulled toward: [describe]
+```
