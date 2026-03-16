@@ -16,6 +16,7 @@
 - [Phase 5: The Future State](#phase-5-the-future-state)
 - [Templates](#templates)
 - [Anti-Patterns to Avoid](#anti-patterns-to-avoid)
+- [LLM Prompts](#-llm-prompts)
 
 ---
 
@@ -333,3 +334,122 @@ Success metric:
 ---
 
 *Part of the [AI Product Builder Playbook](../README.md)*
+
+---
+
+## 🤖 LLM Prompts
+
+Use these prompts to apply this framework directly inside ChatGPT or Claude. Copy the prompt, paste it into the chat, and fill in the bracketed fields before sending.
+
+---
+
+### Prompt 1 — Build a Full Vision Narrative from Scratch
+
+> **Best for:** Starting a new product, preparing for a board presentation, or realigning a team around a shared direction.
+
+```
+You are an expert product strategist helping me craft a compelling Product Vision Narrative.
+
+Use the five-part structure below to guide me through building a complete vision narrative for my product. Ask me one section at a time. After I answer each section, reflect back what I said in sharpened, specific language — cutting generic phrases and replacing them with precise claims. Then move to the next section.
+
+The five sections are:
+1. World Today — what is true right now for my user (ground in a specific observation or data point)
+2. The Problem — who is affected, what they cannot do, and why it matters at a systems level
+3. The Opportunity — what has changed (technology, behaviour, market, cost) that makes now the right moment
+4. The Product Vision — a specific, differentiated statement of the future we are building toward
+5. The Future State — a day-in-the-life narrative from the user's perspective after the product has worked
+
+Apply these quality rules throughout:
+- Replace any generic language with specific, verifiable claims
+- Flag any vision statement that could belong to a competitor
+- Ensure the future state describes user transformation, not product features
+- After completing all five sections, write a final one-paragraph vision narrative that weaves them together
+
+My product: [describe your product in 2–3 sentences]
+My target user: [describe who they are and what they do]
+```
+
+---
+
+### Prompt 2 — Stress-Test an Existing Vision
+
+> **Best for:** Pressure-testing a vision you already have before presenting it to leadership, investors, or the team.
+
+```
+You are a skeptical but constructive product strategy advisor. Your job is to stress-test my product vision narrative and tell me exactly where it is weak, generic, or unconvincing.
+
+Evaluate my vision against these five criteria:
+1. Specificity — Is the user described precisely, or could this apply to anyone?
+2. Differentiation — Could this vision statement belong to a competitor? If so, what is missing?
+3. Clarity of destination — Is there a concrete, testable future state, or is it aspirational and vague?
+4. Bounded scope — Does the vision make clear what this product will NOT do?
+5. Emotional resonance — Would this make an engineer want to build it, or does it read like a corporate document?
+
+For each criterion, give it a score from 1–3:
+1 = Fails, needs rewriting
+2 = Partial, needs sharpening
+3 = Strong, leave it
+
+Then rewrite the weakest sections and give me an improved version of the full narrative.
+
+My current vision narrative:
+[paste your vision narrative here]
+```
+
+---
+
+### Prompt 3 — Generate the Future State Narrative
+
+> **Best for:** Translating a dry vision statement into a vivid, user-centred story that resonates with stakeholders.
+
+```
+You are a product storyteller. Help me write a compelling Future State narrative for my product.
+
+The Future State describes what a user's day-in-the-life looks like AFTER my product has worked — not what the product does, but how the user's world has changed.
+
+Structure the narrative in two parts:
+
+BEFORE (today):
+Write 3–4 sentences in the user's voice describing their current reality — the friction, the workaround, the cost.
+
+AFTER (with the product):
+Write 3–4 sentences in the user's voice describing their transformed reality — what they can now do, what is gone, what has become possible.
+
+Then add:
+- One metric that proves the transformation is real
+- One quote the user might say to a colleague about the product
+
+Rules:
+- Write in plain, specific language — no corporate jargon
+- Every claim in the AFTER section must connect to a real capability the product provides
+- The transformation should be meaningful, not marginal
+
+My product: [describe what it does]
+My target user: [who they are, what they do day-to-day]
+The core capability: [the one thing the product does better than anything else]
+```
+
+---
+
+### Prompt 4 — Rapid Vision Alignment (Team Workshop)
+
+> **Best for:** Running a 30–60 minute team alignment session where multiple people have different views of where the product is going.
+
+```
+You are a product strategy facilitator running a team alignment session on product vision.
+
+I will give you 3–5 different vision statements from different team members. Your job is to:
+
+1. Identify what each statement gets right
+2. Identify where they contradict each other
+3. Extract the common ground — the shared beliefs about user, problem, and direction
+4. Draft a single unified vision statement that incorporates the strongest elements of each
+5. List the 2–3 questions the team still needs to resolve
+
+Format your output clearly with headings for each step.
+
+Team vision statements:
+1. [Paste statement 1]
+2. [Paste statement 2]
+3. [Paste statement 3]
+```
