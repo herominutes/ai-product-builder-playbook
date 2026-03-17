@@ -112,4 +112,13 @@ This playbook documents a methodology for navigating that complexity without los
 
 ---
 
-*Jamil — AI Product Builder · Product Strategy · AI Systems*
+## License & intellectual property
+### Copyright © 2026. All rights reserved.
+
+This repository and everything in it — the source code, product architecture, audit engine, scoring logic, prompt design, pricing model, and product strategy — is the original intellectual property of the repository owner. It is published here for two explicit purposes: to attract conversation with investors, EdTech operators, curriculum directors, and potential co-founders who see the commercial potential in this space; and to demonstrate a complete senior product thinking methodology, from problem definition through retention design, metric discipline, validation roadmap, and competitive moat analysis.
+
+This is not open-source software. Publication on GitHub does not constitute a transfer of IP rights or an invitation to commercialise. You may view, study, and reference this work for educational and non-commercial purposes with attribution. You may not use the code, architecture, scoring rubric, or product strategy in any commercial product or service without a separate written agreement with the author.
+
+If you are an investor, operator, or potential co-founder interested in building this — reach out directly.
+
+
