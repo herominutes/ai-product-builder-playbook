@@ -10,7 +10,7 @@
 
 This repository documents the complete methodology I use to design, build, and scale products — from early strategy through AI system architecture and post-launch evaluation.
 
-It is not a collection of templates pulled from the internet. Every framework here has been applied in practice: to define product vision, structure discovery, architect AI systems, and run product organizations.
+It is not a collection of templates pulled from the internet. Many of these frameworks are ones I use in my own work, and the table near the end shows where some of them appear in my projects.
 
 The playbook spans two disciplines that most teams treat separately. This one connects them:
 
@@ -104,6 +104,15 @@ Post-launch measurement frameworks — retention analysis, learning systems, and
 
 ---
 
+## Where these ideas show up in my projects
+
+| Playbook area | Where it appears |
+|---|---|
+| Discovery, human-centered design, design thinking | [Hero EQ](https://github.com/herominutes/hero-eq): an evidence study first, then a Triple Diamond design process |
+| Prioritization and product decisions | [Hero EQ](https://github.com/herominutes/hero-eq): a three-question focus filter that cut 27 specialists to 12 |
+| Launch decisions and go/no-go gates | [GoGoIdea](https://github.com/herominutes/gogoidea) and [SpecAI](https://github.com/herominutes/pm-spec-ai) |
+| LLM evaluation and prompt testing | [GoGoIdea](https://github.com/herominutes/gogoidea): claims checked by script, with unit tests |
+
 ## Who this is for
 
 Product managers, AI product leads, founders, and product strategy consultants who want a structured, practitioner-built reference — not a textbook overview.
@@ -121,12 +130,12 @@ This playbook documents a methodology for navigating that complexity without los
 ---
 
 ## License & intellectual property
-### Copyright © 2026. All rights reserved.
+### Copyright © 2026 Jamil H. (Hero Minutes). All rights reserved.
 
-This repository and everything in it — the source code, product architecture, audit engine, scoring logic, prompt design, pricing model, and product strategy — is the original intellectual property of the repository owner. It is published here for two explicit purposes: to attract conversation with investors, EdTech operators, curriculum directors, and potential co-founders who see the commercial potential in this space; and to demonstrate a complete senior product thinking methodology, from problem definition through retention design, metric discipline, validation roadmap, and competitive moat analysis.
+This repository and everything in it, the frameworks, templates and methodology, is the original work of the repository owner. It is published to demonstrate a product-thinking methodology, from problem definition through AI architecture and evaluation, and to start conversations with hiring managers, collaborators and potential co-founders.
 
-This is not open-source software. Publication on GitHub does not constitute a transfer of IP rights or an invitation to commercialise. You may view, study, and reference this work for educational and non-commercial purposes with attribution. You may not use the code, architecture, scoring rubric, or product strategy in any commercial product or service without a separate written agreement with the author.
+This is not open-source software. Publication on GitHub does not transfer any intellectual property rights. You may view, study, and reference this work for educational and non-commercial purposes with attribution. You may not use the frameworks, templates and methodology in any commercial product or service without a separate written agreement with the author.
 
-If you are an investor, operator, or potential co-founder interested in building this — reach out directly.
+If you would like to collaborate or discuss this work, reach out directly.
 
 
