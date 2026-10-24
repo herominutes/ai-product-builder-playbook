@@ -29,9 +29,17 @@ Strategy → Discovery → AI Architecture → Documentation → Execution → L
 
 You can also browse by category or search across all artifacts directly.
 
+```mermaid
+flowchart LR
+    A["Strategy"] --> B["Discovery"] --> C["AI architecture"] --> D["Documentation"] --> E["Execution"] --> F["Leadership"] --> G["Learning"]
+    G -.->|"feeds back"| A
+```
+
 ---
 
 ## Playbook structure
+
+<img src="assets/playbook-map.svg" width="100%" alt="Seven playbook phases as cards, each with its guiding question and the frameworks it uses: strategy, discovery, AI architecture, planning and docs, execution, leadership, and learning, which feeds back into strategy.">
 
 ### 01 — Strategy & Vision
 *Where are we going and why does it matter?*

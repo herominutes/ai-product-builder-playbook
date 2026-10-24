@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 566" width="1200" height="566" role="img" aria-labelledby="t d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">AI Product Builder Playbook map</title>
+<desc id="d">Seven phases from strategy to learning, each with the question it answers and the frameworks that apply.</desc>
+<rect width="1200" height="566" rx="14" fill="#0f172a"/>
+<text x="600" y="40" text-anchor="middle" font-size="21" font-weight="700" fill="#f8fafc">The playbook as a process: seven phases, one loop</text>
+<rect x="45" y="84" width="255" height="217" rx="12" fill="#111c33" stroke="#60a5fa" stroke-width="2"/>
+<text x="61" y="114" font-size="15.5" fill="#60a5fa" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="61" dy="0">1 Strategy and vision</tspan></text>
+<line x1="61" y1="124" x2="284" y2="124" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+<text x="61" y="134" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="61" dy="0">Where are we going and why?</tspan></text>
+<text x="61" y="165" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="61" dy="0">product-vision-narrative ·</tspan><tspan x="61" dy="17">product-strategy-framework ·</tspan><tspan x="61" dy="17">product-opportunity-assessment ·</tspan><tspan x="61" dy="17">north-star-metrics · ai-</tspan><tspan x="61" dy="17">transformation-roadmap</tspan></text>
+<rect x="330" y="84" width="255" height="217" rx="12" fill="#111c33" stroke="#4ade80" stroke-width="2"/>
+<text x="346" y="114" font-size="15.5" fill="#4ade80" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="346" dy="0">2 Discovery</tspan></text>
+<line x1="346" y1="124" x2="569" y2="124" stroke="#4ade80" stroke-width="1" opacity="0.5"/>
+<text x="346" y="134" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="346" dy="0">What do users actually need?</tspan></text>
+<text x="346" y="165" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="346" dy="0">customer-journey-mapping · user-</tspan><tspan x="346" dy="17">personas · jobs-to-be-done ·</tspan><tspan x="346" dy="17">problem-framing-framework ·</tspan><tspan x="346" dy="17">human-centered-design · design-</tspan><tspan x="346" dy="17">thinking</tspan></text>
+<rect x="615" y="84" width="255" height="217" rx="12" fill="#111c33" stroke="#c4b5fd" stroke-width="2"/>
+<text x="631" y="114" font-size="15.5" fill="#c4b5fd" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="631" dy="0">3 AI architecture</tspan></text>
+<line x1="631" y1="124" x2="854" y2="124" stroke="#c4b5fd" stroke-width="1" opacity="0.5"/>
+<text x="631" y="134" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="631" dy="0">How do we build AI that works</tspan><tspan x="631" dy="17">reliably?</tspan></text>
+<text x="631" y="182" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="631" dy="0">ai-orchestration · multi-agent-</tspan><tspan x="631" dy="17">system · rag-framework · ai-</tspan><tspan x="631" dy="17">guardrails · ai-memory-system ·</tspan><tspan x="631" dy="17">llm-evaluation-framework ·</tspan><tspan x="631" dy="17">prompt-testing · ai-risk-</tspan><tspan x="631" dy="17">framework · ai-monitoring</tspan></text>
+<rect x="900" y="84" width="255" height="217" rx="12" fill="#111c33" stroke="#fbbf24" stroke-width="2"/>
+<text x="916" y="114" font-size="15.5" fill="#fbbf24" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="916" dy="0">4 Planning and docs</tspan></text>
+<line x1="916" y1="124" x2="1139" y2="124" stroke="#fbbf24" stroke-width="1" opacity="0.5"/>
+<text x="916" y="134" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="916" dy="0">What exactly are we building?</tspan></text>
+<text x="916" y="165" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="916" dy="0">ai-prd-template · technical-</tspan><tspan x="916" dy="17">design-doc · system-</tspan><tspan x="916" dy="17">architecture-template ·</tspan><tspan x="916" dy="17">decision-log · product-kpis</tspan></text>
+<rect x="45" y="323" width="255" height="183" rx="12" fill="#111c33" stroke="#2dd4bf" stroke-width="2"/>
+<text x="61" y="353" font-size="15.5" fill="#2dd4bf" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="61" dy="0">5 Execution</tspan></text>
+<line x1="61" y1="363" x2="284" y2="363" stroke="#2dd4bf" stroke-width="1" opacity="0.5"/>
+<text x="61" y="373" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="61" dy="0">How do we ship with confidence?</tspan></text>
+<text x="61" y="404" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="61" dy="0">prioritization-framework ·</tspan><tspan x="61" dy="17">roadmap-framework · product-</tspan><tspan x="61" dy="17">decision-framework ·</tspan><tspan x="61" dy="17">experimentation-framework ·</tspan><tspan x="61" dy="17">product-launch-playbook</tspan></text>
+<rect x="330" y="323" width="255" height="183" rx="12" fill="#111c33" stroke="#f87171" stroke-width="2"/>
+<text x="346" y="353" font-size="15.5" fill="#f87171" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="346" dy="0">6 Leadership</tspan></text>
+<line x1="346" y1="363" x2="569" y2="363" stroke="#f87171" stroke-width="1" opacity="0.5"/>
+<text x="346" y="373" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="346" dy="0">How do we sustain this?</tspan></text>
+<text x="346" y="404" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="346" dy="0">product-operating-model ·</tspan><tspan x="346" dy="17">product-governance · product-</tspan><tspan x="346" dy="17">decision-making · communication-</tspan><tspan x="346" dy="17">and-handoffs · product-review-</tspan><tspan x="346" dy="17">framework · principles</tspan></text>
+<rect x="615" y="323" width="255" height="183" rx="12" fill="#111c33" stroke="#94a3b8" stroke-width="2"/>
+<text x="631" y="353" font-size="15.5" fill="#94a3b8" text-anchor="start" font-weight="700" xml:space="preserve"><tspan x="631" dy="0">7 Learning</tspan></text>
+<line x1="631" y1="363" x2="854" y2="363" stroke="#94a3b8" stroke-width="1" opacity="0.5"/>
+<text x="631" y="373" font-size="12.5" fill="#94a3b8" text-anchor="start" font-style="italic" xml:space="preserve"><tspan x="631" dy="0">Are we actually getting better?</tspan></text>
+<text x="631" y="404" font-size="13.5" fill="#e2e8f0" text-anchor="start" xml:space="preserve"><tspan x="631" dy="0">retention-analysis · product-</tspan><tspan x="631" dy="17">learning-system · ai-monitoring</tspan></text>
+<rect x="631" y="437" width="144" height="24" rx="12" fill="none" stroke="#94a3b8" stroke-width="1.5"/><text x="642" y="454" font-size="12.5" font-weight="700" fill="#94a3b8">Feeds back into 1</text>
+<text x="600" y="536" text-anchor="middle" font-size="13" fill="#94a3b8">Phase 7 closes the loop: what you learn after launch goes back into strategy.</text>
+</svg>
